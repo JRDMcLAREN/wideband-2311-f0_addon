@@ -1,0 +1,42 @@
+#pragma once
+
+#define LED_BLUE_PORT GPIOB
+#define LED_BLUE_PIN 5
+
+#define LED_GREEN_PORT GPIOB
+#define LED_GREEN_PIN 6
+
+#define NERNST_49_ESR_DRIVER_PORT GPIOB
+#define NERNST_49_ESR_DRIVER_PIN 7
+
+// Communication - UART
+#define UART_GPIO_PORT				GPIOA
+#define LL_UART_TX_PIN				LL_GPIO_PIN_9
+#define LL_UART_RX_PIN				LL_GPIO_PIN_10
+
+// Communication - CAN1
+#define CAN_GPIO_PORT				GPIOA
+#define LL_CAN_TX_PIN				LL_GPIO_PIN_12
+#define LL_CAN_RX_PIN				LL_GPIO_PIN_11
+
+#define NERNST_ESR_DRIVER_PORT GPIOB
+#define NERNST_ESR_DRIVER_PIN 7
+
+// PA7
+#define HEATER_PWM_DEVICE PWMD1
+#define HEATER_PWM_CHANNEL_0 0
+
+// PA6
+#define PUMP_DAC_PWM_DEVICE PWMD3
+#define PUMP_DAC_PWM_CHANNEL_0 0
+
+// DAC for AUX outputs
+#define AUXOUT_DAC_DEVICE       	DACD1
+#define AUXOUT_DAC_CHANNEL_0    	0
+#define AUXOUT_DAC_CHANNEL_1    	1
+
+#define ID_SEL1_PORT GPIOB
+#define ID_SEL1_PIN 1
+
+#define ID_SEL2_PORT GPIOA
+#define ID_SEL2_PIN 8

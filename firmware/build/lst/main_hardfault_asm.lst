@@ -1,0 +1,58 @@
+ARM GAS  /tmp/cchz7HqL.s 			page 1
+
+
+   1              	# 0 "main_hardfault_asm.S"
+   2              	# 1 "/home/kocur/wideband-2311-f0_addon/firmware//"
+   1              	...
+   0              	
+   0              	
+   1              	.syntax unified
+   2              	.cpu    cortex-m3
+   3              	.thumb
+   4              	.align  2
+   5              	.thumb_func
+   6              	
+   7              	.type HardFault_Handler, %function
+   8              	.type UsageFault_Handler, %function
+   9              	.type MemManage_Handler, %function
+  10              	
+  11              	.global HardFault_Handler
+  12              	.global BusFault_Handler
+  13              	HardFault_Handler:
+  14              	BusFault_Handler:
+  15 0000 1EF0040F 		tst LR, #4
+  16 0004 0CBF     		ite EQ
+  17 0006 EFF30880 		mrseq R0, MSP
+  18 000a EFF30980 		mrsne R0, PSP
+  19 000e FFF7FEBF 		b HardFault_Handler_C
+  20              	
+  21              	.global UsageFault_Handler
+  22              	UsageFault_Handler:
+  23 0012 1EF0040F 		tst LR, #4
+  24 0016 0CBF     		ite EQ
+  25 0018 EFF30880 		mrseq R0, MSP
+  26 001c EFF30980 		mrsne R0, PSP
+  27 0020 FFF7FEBF 		b UsageFault_Handler_C
+  28              	
+  29              	.global MemManage_Handler
+  30              	MemManage_Handler:
+  31 0024 1EF0040F 		tst LR, #4
+  32 0028 0CBF     		ite EQ
+  33 002a EFF30880 		mrseq R0, MSP
+  34 002e EFF30980 		mrsne R0, PSP
+  35 0032 FFF7FEBF 		b MemManage_Handler_C
+  35      00BF
+ARM GAS  /tmp/cchz7HqL.s 			page 2
+
+
+DEFINED SYMBOLS
+main_hardfault_asm.S:4      .text:0000000000000000 $t
+main_hardfault_asm.S:13     .text:0000000000000000 HardFault_Handler
+main_hardfault_asm.S:22     .text:0000000000000012 UsageFault_Handler
+main_hardfault_asm.S:30     .text:0000000000000024 MemManage_Handler
+main_hardfault_asm.S:14     .text:0000000000000000 BusFault_Handler
+
+UNDEFINED SYMBOLS
+HardFault_Handler_C
+UsageFault_Handler_C
+MemManage_Handler_C

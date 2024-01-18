@@ -1,4 +1,5 @@
 TEST version of rusefi wideband firmware for mre addon board, with analog outputs.
+All changes can be found in firmware/boards/f0_addon directory
 
 [![Build Firmware](https://github.com/mck1117/wideband/actions/workflows/build-firmware.yaml/badge.svg)](https://github.com/mck1117/wideband/actions/workflows/build-firmware.yaml) ![license](https://img.shields.io/github/license/mck1117/wideband)
 
